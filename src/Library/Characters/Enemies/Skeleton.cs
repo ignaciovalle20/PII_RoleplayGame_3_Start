@@ -7,6 +7,7 @@ namespace RoleplayGame
         public Skeleton(string name, int VP) : base (name, VP)
         {
             this.AddItem(new Bone());
+            this.AddItem(new Shield());
         }
 
         

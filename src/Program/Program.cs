@@ -19,9 +19,9 @@ namespace Program
             Knight knightdark = new Knight("KnightDark");
             Archer greenarrow = new Archer("GreenArrow");
             //Enemies
-            Pirate morgan = new Pirate("PirateMorgan",10);
+            Pirate morgan = new Pirate("PirateMorgan",8);
             Skeleton skel = new Skeleton("Skeleton", 5);
-            Pirate oneill = new Pirate("O'neill",10);
+            Pirate oneill = new Pirate("O'neill",2);
 
             Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
             Console.WriteLine($"Gandalf attacks Gimli with ⚔️ {gandalf.AttackValue}");

@@ -4,7 +4,7 @@ namespace RoleplayGame
 {
     public abstract class Hero : Character
     {
-        private int totalVP = 0;
+        private int vp = 0;
         public int VP {get; set;}
          protected Hero(string name) : base(name)
         {
@@ -14,7 +14,7 @@ namespace RoleplayGame
  
         public void addVP(Enemy enemies)
         {
-            this.totalVP += enemies.VP; 
+            this.VP += enemies.VP; 
         }
     }
 }
