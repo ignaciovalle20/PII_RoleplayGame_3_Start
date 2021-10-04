@@ -7,6 +7,10 @@ namespace RoleplayGame
     {
         private List<Hero> heroes;
         private List<Enemy> enemies;
+
+        private List<Hero> deadheroes = new List<Hero>();
+        private List<Enemy> deadenemies = new List<Enemy>();
+
         public Encounter()
         {
             this.heroes = new List<Hero>();
@@ -42,11 +46,18 @@ namespace RoleplayGame
                     if (this.heroes[count].Health == 0)
                     {  
                         Console.WriteLine($"{this.heroes[count].Name} is dead!!");
-                        this.heroes.Remove(heroes[count]);
+                       // this.heroes.Remove(heroes[count]);
+                        this.deadheroes.Add(heroes[count]);
                     }
 
                     count++;
                 }
+                //Remove DeadHeroes from list
+                foreach (Hero deadhero in this.deadheroes)
+                {
+                    this.heroes.Remove(deadhero);
+                }
+            
                 //HeroesAttack
 
                 //count = 0;
@@ -61,10 +72,16 @@ namespace RoleplayGame
                         if (this.enemies[i].Health == 0)
                         {  
                             Console.WriteLine($"{this.enemies[i].Name} is dead!!");
-                            this.enemies.Remove(this.enemies[i]);
+                            //this.enemies.Remove(this.enemies[i]);
+                            this.deadenemies.Add(this.enemies[i]);
                             hero.addVP(this.enemies[i]);
                         }
                     }
+                }
+                //Remove deadEnemies form list
+                foreach (Enemy deadenemy in this.deadenemies)
+                {
+                    this.enemies.Remove(deadenemy);
                 }
             }
         }
