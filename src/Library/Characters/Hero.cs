@@ -4,7 +4,6 @@ namespace RoleplayGame
 {
     public abstract class Hero : Character
     {
-        private int vp = 0;
         public int VP {get; set;}
          protected Hero(string name) : base(name)
         {
