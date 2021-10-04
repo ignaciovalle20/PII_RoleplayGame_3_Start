@@ -62,15 +62,14 @@ namespace RoleplayGame
                     {
                         this.enemies[i].ReceiveAttack(hero.AttackValue);
                         Console.WriteLine($"Hero: {hero.Name} attacks to Enemy:{this.enemies[i].Name}, Health:{this.enemies[i].Health} ");
-                        if ((this.enemies[i].Health == 0) ) // && (!this.deadenemies.Contains(this.enemies[i])))
+                        //Si el enemigo muere lo agrego a lista de enemigos muertos y asigno puntos de victoria al heroe
+                        if ((this.enemies[i].Health == 0) ) 
                         {  
                             Console.WriteLine($"{this.enemies[i].Name} is dead!! - Hero {hero.Name} won {this.enemies[i].VP} VPs  ");
-                            //this.enemies.Remove(this.enemies[i]);
                             this.deadenemies.Add(this.enemies[i]);
                             hero.addVP(this.enemies[i]);
                         }
                     }
-              //  Console.WriteLine($"Heroe Name: {hero.Name}, VP: {hero.VP}, Heal: {hero.Health}");        
                 }
             }
         }     
